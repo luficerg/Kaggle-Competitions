@@ -36,7 +36,7 @@ This project is licensed under the terms of the MIT License. Feel free to use th
 For any inquiries or feedback, feel free to contact the author:
 
 - **Author:** Luficer G
-- **Email:** luficerg5@gmail.com
+- **Email:** luficergfree@gmail.com
 
 Explore the project [here](https://www.kaggle.com/code/luficergfree/it-s-me-luficer-g) on Kaggle.
 
