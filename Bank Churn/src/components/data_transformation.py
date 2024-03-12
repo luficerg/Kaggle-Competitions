@@ -4,7 +4,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,MinMaxScaler, LabelEncoder
 from ensure import ensure_annotations
-
+from pathlib import Path
 
 
 
@@ -68,8 +68,8 @@ class DataTransformation:
 
 if __name__ ==   '__main__':
     try:
-        train = pd.read_csv('artifacts\data_ingestion\\train.csv')
-        test = pd.read_csv('artifacts\data_ingestion\\test.csv')
+        train = pd.read_csv(Path('artifacts\data_ingestion\\train.csv'))
+        test = pd.read_csv(Path('artifacts\data_ingestion\\test.csv'))
 
         trans = DataTransformation()
         dataframe = trans.drop_duplicate(train)

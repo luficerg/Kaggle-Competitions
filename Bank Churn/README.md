@@ -3,15 +3,14 @@
 
 ## Workflows
 
-1. Update config.yaml
-2. Update schema.yaml
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline 
-8. Update the main.py
-9. Update the app.py
+1. Update schema.yaml
+2. Update params.yaml
+3. Update the entity
+4. Update the configuration manager in src config
+5. Update the components
+6. Update the pipeline 
+7. Update the main.py
+8. Update the app.py
 
 
 
@@ -21,16 +20,16 @@
 Clone the repository
 
 ```bash
-https://github.com/entbappy/End-to-end-Machine-Learning-Project-with-MLflow
+git clone https://github.com/luficerg/Kaggle-Competitions
 ```
-### STEP 01- Create a conda environment after opening the repository
+### STEP 01- Create a virtual environment after opening the repository
 
 ```bash
-conda create -n mlproj python=3.8 -y
+conda create -n venv python=3.8 -y
 ```
 
 ```bash
-conda activate mlproj
+conda activate venv
 ```
 
 
@@ -50,8 +49,6 @@ Now,
 open up you local host and port
 ```
 
-
-
 ## MLflow
 
 [Documentation](https://mlflow.org/docs/latest/index.html)
@@ -63,20 +60,20 @@ open up you local host and port
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/End-to-end-Machine-Learning-Project-with-MLflow.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
+MLFLOW_TRACKING_URI=https://dagshub.com/luficerg/Kaggle-Competitions.mlflow \
+MLFLOW_TRACKING_USERNAME=luficerg \
+MLFLOW_TRACKING_PASSWORD=251c01a63af78636ff098c62735d662f759756ce \
 python script.py
 
 Run this to export as env variables:
 
 ```bash
 
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/End-to-end-Machine-Learning-Project-with-MLflow.mlflow
+export MLFLOW_TRACKING_URI=https://dagshub.com/luficerg/Kaggle-Competitions.mlflow 
 
-export MLFLOW_TRACKING_USERNAME=entbappy 
+export MLFLOW_TRACKING_USERNAME=luficerg
 
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
+export MLFLOW_TRACKING_PASSWORD=251c01a63af78636ff098c62735d662f759756ce
 
 ```
 
@@ -164,5 +161,3 @@ MLflow
  - Its Production Grade
  - Trace all of your expriements
  - Logging & tagging your model
-
-

@@ -1,7 +1,8 @@
 import yaml
 from ensure import ensure_annotations
 import pandas as pd
-import os
+from pathlib import Path
+
 
 
 class DataValidation:
@@ -75,7 +76,8 @@ class DataValidation:
 
 if __name__ ==   '__main__':
     try:
-        data = pd.read_csv('artifacts\data_ingestion\\train.csv')
+        data = pd.read_csv(Path('artifacts\data_ingestion\\train.csv'))
+
         data_validation = DataValidation(data, 'schema.yaml')
         data_validation.run_validation()
 

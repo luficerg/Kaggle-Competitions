@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os 
 import numpy as np
 import pandas as pd
-from mlProject.pipeline.prediction import PredictionPipeline
+from src.pipeline.prediction import PredictionPipeline
 
 
 app = Flask(__name__) # initializing a flask app
@@ -23,24 +23,27 @@ def index():
     if request.method == 'POST':
         try:
             #  reading the inputs given by the user
-            fixed_acidity =float(request.form['fixed_acidity'])
-            volatile_acidity =float(request.form['volatile_acidity'])
-            citric_acid =float(request.form['citric_acid'])
-            residual_sugar =float(request.form['residual_sugar'])
-            chlorides =float(request.form['chlorides'])
-            free_sulfur_dioxide =float(request.form['free_sulfur_dioxide'])
-            total_sulfur_dioxide =float(request.form['total_sulfur_dioxide'])
-            density =float(request.form['density'])
-            pH =float(request.form['pH'])
-            sulphates =float(request.form['sulphates'])
-            alcohol =float(request.form['alcohol'])
-       
-         
-            data = [fixed_acidity,volatile_acidity,citric_acid,residual_sugar,chlorides,free_sulfur_dioxide,total_sulfur_dioxide,density,pH,sulphates,alcohol]
-            data = np.array(data).reshape(1, 11)
+            CustomerId = int(request.form['CustomerId'])
+            Surname = request.form['Surname']
+            CreditScore = int(request.form['CreditScore'])
+            Geography = request.form['Geography']
+            Gender = request.form['Gender']
+            Age = float(request.form['Age'])
+            Tenure = int(request.form['Tenure'])
+            Balance = float(request.form['Balance'])
+            NumOfProducts = int(request.form['NumOfProducts'])
+            HasCrCard = float(request.form['HasCrCard'])
+            IsActiveMember = float(request.form['IsActiveMember'])
+            EstimatedSalary = float(request.form['EstimatedSalary'])
+
+            data = [CustomerId, Surname, CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]
+            column_names = ['CustomerId', 'Surname', 'CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts', 'HasCrCard', 'IsActiveMember', 'EstimatedSalary']
+
+            df = pd.DataFrame([data], columns=column_names)
+
             
             obj = PredictionPipeline()
-            predict = obj.predict(data)
+            predict = obj.predict(df)
 
             return render_template('results.html', prediction = str(predict))
 

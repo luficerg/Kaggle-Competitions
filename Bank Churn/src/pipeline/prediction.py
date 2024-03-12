@@ -1,16 +1,18 @@
-import joblib 
-import numpy as np
-import pandas as pd
+import pickle
 from pathlib import Path
+from ensure import ensure_annotations
+import pandas as pd
 
-
+model_name = Path('artifacts/model_trainer/model.pkl')
 
 class PredictionPipeline:
     def __init__(self):
-        self.model = joblib.load(Path('artifacts/model_trainer/model.joblib'))
+        # Load the trained model from the file
+        with open(model_name, "rb") as f:
+            self.model = pickle.load(f)
 
-    
-    def predict(self, data):
+    @ensure_annotations
+    def predict(self, data : pd.DataFrame):
         prediction = self.model.predict(data)
 
         return prediction
