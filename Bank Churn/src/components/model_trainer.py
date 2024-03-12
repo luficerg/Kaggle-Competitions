@@ -1,4 +1,4 @@
-from data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformation
 from sklearn.model_selection import train_test_split
 from lightgbm import LGBMClassifier
 from catboost import CatBoostClassifier

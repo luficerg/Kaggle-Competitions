@@ -2,7 +2,6 @@ import yaml
 from ensure import ensure_annotations
 import pandas as pd
 import os
-print(os.getcwd())
 
 
 class DataValidation:
