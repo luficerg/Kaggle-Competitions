@@ -1,6 +1,6 @@
 # Kaggle Competition Notebooks by Lucifer G
 
-Welcome to my repository of Kaggle competition notebooks! 🚀 As a Kaggle notebook master,
+Welcome to my repository of Kaggle competition notebooks! 🚀 As a Kaggle notebook Expert,
 I love diving into various competitions and exploring innovative solutions to challenging problems. 
 Here, you'll find a collection of notebooks from competitions I've participated in, along with the associated data.
 
